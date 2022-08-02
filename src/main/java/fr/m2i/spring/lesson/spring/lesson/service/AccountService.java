@@ -10,10 +10,7 @@ import static java.util.Comparator.comparing;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author elouf
- */
+
 
 
 @Service
@@ -27,4 +24,5 @@ public class AccountService {
     public Optional<Account> findOldestClient() {
         return accountDao.getAllAccount().stream().min(comparing(Account::getBirthday));
     }
+    
 }
